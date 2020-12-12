@@ -7,6 +7,6 @@ stage('build'){
 }
  stage ('building docker image'){
   echo "building image"
-  sh 'docker build -t dockersing/demo ."
+  sh 'docker build -t dockersing/demo .'
  }
 }
