@@ -12,8 +12,11 @@ stage('build'){
  stage ('pushing the docker image')
  {
   echo "pushing the docker image"
-  aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/u1g2q3f8
-  sh 'docker push public.ecr.aws/u1g2q3f8/dockeriage:latest'
+  sh """
+   aws ecr-public get-login-password --region us-east-1'
+   docker login --username AWS --password-stdin public.ecr.aws/u1g2q3f8'
+   docker push public.ecr.aws/u1g2q3f8/dockeriage:latest
+  """
   
  }
 }
